@@ -3,7 +3,7 @@ package com.jetstocks.database.entity
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.jetstocks.data.model.CompanyListing
+import com.jetstocks.model.CompanyListing
 import java.time.LocalDate
 
 @Entity(tableName = "company_listing")

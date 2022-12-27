@@ -1,6 +1,6 @@
-package com.jetstocks.ui
+package com.jetstocks.ui.companylisting
 
-import com.jetstocks.data.model.CompanyListing
+import com.jetstocks.model.CompanyListing
 
 sealed interface CompanyListingUiState {
   object Loading : CompanyListingUiState

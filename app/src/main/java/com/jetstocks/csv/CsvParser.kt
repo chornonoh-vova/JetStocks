@@ -1,6 +1,6 @@
-package com.jetstocks.data.parser
+package com.jetstocks.csv
 
-import com.jetstocks.data.model.CompanyListing
+import com.jetstocks.model.CompanyListing
 import de.siegmar.fastcsv.reader.NamedCsvRow
 import java.time.LocalDate
 

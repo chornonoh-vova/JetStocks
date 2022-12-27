@@ -1,7 +1,7 @@
 package com.jetstocks.di
 
-import com.jetstocks.data.repository.CompanyListingRepository
-import com.jetstocks.data.repository.OfflineFirstCompanyListingRepository
+import com.jetstocks.data.CompanyListingRepository
+import com.jetstocks.data.OfflineFirstCompanyListingRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

@@ -1,10 +1,10 @@
 package com.jetstocks.data.local
 
-import com.jetstocks.data.model.CompanyListing
 import com.jetstocks.database.dao.CompanyListingDao
 import com.jetstocks.database.entity.CompanyListingEntity
 import com.jetstocks.database.entity.asEntity
 import com.jetstocks.database.entity.asExternalModel
+import com.jetstocks.model.CompanyListing
 import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 

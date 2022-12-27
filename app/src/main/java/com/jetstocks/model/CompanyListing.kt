@@ -1,4 +1,4 @@
-package com.jetstocks.data.model
+package com.jetstocks.model
 
 import java.time.LocalDate
 

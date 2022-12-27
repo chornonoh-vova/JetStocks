@@ -1,4 +1,4 @@
-package com.jetstocks.data.repository
+package com.jetstocks.data
 
 import com.jetstocks.data.local.CompanyListingLocalDataSource
 import com.jetstocks.data.remote.CompanyListingRemoteDataSource

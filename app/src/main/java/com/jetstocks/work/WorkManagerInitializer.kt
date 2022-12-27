@@ -11,6 +11,7 @@ class WorkManagerInitializer : Initializer<WorkManager> {
     WorkManager.initialize(context, configuration)
     return WorkManager.getInstance(context)
   }
+
   override fun dependencies(): List<Class<out Initializer<*>>> {
     return emptyList()
   }

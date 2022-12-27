@@ -1,4 +1,4 @@
-package com.jetstocks.ui
+package com.jetstocks.ui.companylisting
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -9,7 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.ExperimentalLifecycleComposeApi
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.jetstocks.data.viewmodel.CompanyListingViewModel
 
 @OptIn(ExperimentalLifecycleComposeApi::class)
 @Composable

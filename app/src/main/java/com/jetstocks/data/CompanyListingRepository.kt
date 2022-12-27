@@ -1,6 +1,6 @@
-package com.jetstocks.data.repository
+package com.jetstocks.data
 
-import com.jetstocks.data.model.CompanyListing
+import com.jetstocks.model.CompanyListing
 import kotlinx.coroutines.flow.Flow
 
 interface CompanyListingRepository {

@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.hilt.work.HiltWorker
 import androidx.work.*
 import com.jetstocks.BuildConfig
-import com.jetstocks.data.repository.CompanyListingRepository
+import com.jetstocks.data.CompanyListingRepository
 import dagger.assisted.Assisted
 import dagger.assisted.AssistedInject
 import kotlinx.coroutines.Dispatchers

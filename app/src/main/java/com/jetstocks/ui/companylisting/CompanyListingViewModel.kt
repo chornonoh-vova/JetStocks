@@ -1,11 +1,10 @@
-package com.jetstocks.data.viewmodel
+package com.jetstocks.ui.companylisting
 
 import androidx.compose.runtime.snapshotFlow
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jetstocks.data.model.CompanyListing
-import com.jetstocks.data.repository.CompanyListingRepository
-import com.jetstocks.ui.CompanyListingUiState
+import com.jetstocks.data.CompanyListingRepository
+import com.jetstocks.model.CompanyListing
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.*

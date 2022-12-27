@@ -1,7 +1,7 @@
 package com.jetstocks.data.remote
 
-import com.jetstocks.data.model.CompanyListing
-import com.jetstocks.data.parser.CsvParser
+import com.jetstocks.csv.CsvParser
+import com.jetstocks.model.CompanyListing
 import de.siegmar.fastcsv.reader.NamedCsvReader
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.suspendCancellableCoroutine

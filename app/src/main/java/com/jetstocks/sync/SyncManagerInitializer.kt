@@ -5,7 +5,7 @@ import androidx.startup.Initializer
 import androidx.work.WorkManager
 import com.jetstocks.work.WorkManagerInitializer
 
-class SyncManagerInitializer: Initializer<SyncManager> {
+class SyncManagerInitializer : Initializer<SyncManager> {
   override fun create(context: Context): SyncManager {
     val workManager = WorkManager.getInstance(context)
     SyncManager.initialize(workManager)
