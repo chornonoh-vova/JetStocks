@@ -4,7 +4,7 @@ import com.jetstocks.model.CompanyListing
 import kotlinx.coroutines.flow.Flow
 
 interface CompanyListingRepository {
-  fun getCompanyListings(): Flow<List<CompanyListing>>
+    fun getCompanyListings(): Flow<List<CompanyListing>>
 
-  suspend fun syncCompanyListings()
+    suspend fun syncCompanyListings()
 }

@@ -15,20 +15,20 @@ import java.io.File
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-  @Provides
-  fun providesCache(@ApplicationContext context: Context) = Cache(
-    File(context.cacheDir, "jetstocks_cache"),
-    (20 * 1024 * 1024).toLong()
-  )
+    @Provides
+    fun providesCache(@ApplicationContext context: Context) = Cache(
+        File(context.cacheDir, "jetstocks_cache"),
+        (20 * 1024 * 1024).toLong()
+    )
 
-  @Provides
-  fun providesLoggingInterceptor(): Interceptor = HttpLoggingInterceptor().apply {
-    setLevel(HttpLoggingInterceptor.Level.HEADERS)
-  }
+    @Provides
+    fun providesLoggingInterceptor(): Interceptor = HttpLoggingInterceptor().apply {
+        setLevel(HttpLoggingInterceptor.Level.HEADERS)
+    }
 
-  @Provides
-  fun providesOkHttpClient(cache: Cache, loggingInterceptor: Interceptor) = OkHttpClient.Builder()
-    .cache(cache)
-    .addInterceptor(loggingInterceptor)
-    .build()
+    @Provides
+    fun providesOkHttpClient(cache: Cache, loggingInterceptor: Interceptor) = OkHttpClient.Builder()
+        .cache(cache)
+        .addInterceptor(loggingInterceptor)
+        .build()
 }

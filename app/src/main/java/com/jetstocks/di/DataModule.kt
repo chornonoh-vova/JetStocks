@@ -10,8 +10,8 @@ import dagger.hilt.components.SingletonComponent
 @Module
 @InstallIn(SingletonComponent::class)
 interface DataModule {
-  @Binds
-  fun bindsCompanyListingRepository(
-    companyListingRepository: OfflineFirstCompanyListingRepository
-  ): CompanyListingRepository
+    @Binds
+    fun bindsCompanyListingRepository(
+        companyListingRepository: OfflineFirstCompanyListingRepository
+    ): CompanyListingRepository
 }

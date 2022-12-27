@@ -13,20 +13,20 @@ import javax.inject.Inject
 @OptIn(ExperimentalCoroutinesApi::class)
 @HiltViewModel
 class CompanyListingViewModel @Inject constructor(
-  private val companyListingRepository: CompanyListingRepository
+    private val companyListingRepository: CompanyListingRepository
 ) : ViewModel() {
-  private val companyListingsState = snapshotFlow {
-    companyListingRepository.getCompanyListings()
-      .map<List<CompanyListing>, CompanyListingUiState>(CompanyListingUiState::Success)
-      .onStart { emit(CompanyListingUiState.Loading) }
-  }
+    private val companyListingsState = snapshotFlow {
+        companyListingRepository.getCompanyListings()
+            .map<List<CompanyListing>, CompanyListingUiState>(CompanyListingUiState::Success)
+            .onStart { emit(CompanyListingUiState.Loading) }
+    }
 
-  val uiState: StateFlow<CompanyListingUiState> =
-    companyListingsState
-      .flatMapLatest { it }
-      .stateIn(
-        scope = viewModelScope,
-        started = SharingStarted.WhileSubscribed(5_000),
-        initialValue = CompanyListingUiState.Loading
-      )
+    val uiState: StateFlow<CompanyListingUiState> =
+        companyListingsState
+            .flatMapLatest { it }
+            .stateIn(
+                scope = viewModelScope,
+                started = SharingStarted.WhileSubscribed(5_000),
+                initialValue = CompanyListingUiState.Loading
+            )
 }

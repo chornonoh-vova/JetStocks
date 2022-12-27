@@ -5,14 +5,14 @@ import com.jetstocks.data.remote.CompanyListingRemoteDataSource
 import javax.inject.Inject
 
 class OfflineFirstCompanyListingRepository @Inject constructor(
-  private val companyListingLocalDataSource: CompanyListingLocalDataSource,
-  private val companyListingRemoteDataSource: CompanyListingRemoteDataSource
+    private val companyListingLocalDataSource: CompanyListingLocalDataSource,
+    private val companyListingRemoteDataSource: CompanyListingRemoteDataSource
 ) : CompanyListingRepository {
-  override fun getCompanyListings() = companyListingLocalDataSource.getCompanyListings()
+    override fun getCompanyListings() = companyListingLocalDataSource.getCompanyListings()
 
-  override suspend fun syncCompanyListings() {
-    val companyListings = companyListingRemoteDataSource.getCompanyListings()
+    override suspend fun syncCompanyListings() {
+        val companyListings = companyListingRemoteDataSource.getCompanyListings()
 
-    companyListingLocalDataSource.persistCompanyListings(companyListings)
-  }
+        companyListingLocalDataSource.persistCompanyListings(companyListings)
+    }
 }

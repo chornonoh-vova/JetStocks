@@ -9,5 +9,5 @@ import com.jetstocks.database.entity.CompanyListingEntity
 @Database(entities = [CompanyListingEntity::class], version = 1, exportSchema = true)
 @TypeConverters(Converters::class)
 abstract class JetStocksDatabase : RoomDatabase() {
-  abstract fun companyListingDao(): CompanyListingDao
+    abstract fun companyListingDao(): CompanyListingDao
 }

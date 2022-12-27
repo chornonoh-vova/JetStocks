@@ -12,33 +12,33 @@ import kotlinx.coroutines.withContext
 
 @HiltWorker
 class SyncWorker @AssistedInject constructor(
-  @Assisted appContext: Context,
-  @Assisted params: WorkerParameters,
-  private val companyListingRepository: CompanyListingRepository
+    @Assisted appContext: Context,
+    @Assisted params: WorkerParameters,
+    private val companyListingRepository: CompanyListingRepository
 ) : CoroutineWorker(appContext, params) {
-  override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
-    try {
-      companyListingRepository.syncCompanyListings()
-    } catch (exception: Exception) {
-      Result.retry()
+    override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
+        try {
+            companyListingRepository.syncCompanyListings()
+        } catch (exception: Exception) {
+            Result.retry()
+        }
+
+        Result.success()
     }
 
-    Result.success()
-  }
+    companion object {
+        const val WorkName = "${BuildConfig.APPLICATION_ID}.SyncWork"
 
-  companion object {
-    const val WorkName = "${BuildConfig.APPLICATION_ID}.SyncWork"
+        private val SyncConstraints
+            get() = Constraints.Builder()
+                .setRequiredNetworkType(NetworkType.CONNECTED)
+                .build()
 
-    private val SyncConstraints
-      get() = Constraints.Builder()
-        .setRequiredNetworkType(NetworkType.CONNECTED)
-        .build()
-
-    fun startUpSyncWork() =
-      OneTimeWorkRequestBuilder<SyncWorker>()
-        .setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
-        .setConstraints(SyncConstraints)
-        .setInputData(Data.Builder().build())
-        .build()
-  }
+        fun startUpSyncWork() =
+            OneTimeWorkRequestBuilder<SyncWorker>()
+                .setExpedited(OutOfQuotaPolicy.RUN_AS_NON_EXPEDITED_WORK_REQUEST)
+                .setConstraints(SyncConstraints)
+                .setInputData(Data.Builder().build())
+                .build()
+    }
 }

@@ -9,12 +9,12 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CompanyListingDao {
-  @Query("SELECT * FROM company_listing ORDER BY symbol ASC")
-  fun getCompanyListings(): Flow<List<CompanyListingEntity>>
+    @Query("SELECT * FROM company_listing ORDER BY symbol ASC")
+    fun getCompanyListings(): Flow<List<CompanyListingEntity>>
 
-  @Insert(onConflict = OnConflictStrategy.REPLACE)
-  suspend fun insertOne(entity: CompanyListingEntity): Long
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertOne(entity: CompanyListingEntity): Long
 
-  @Insert(onConflict = OnConflictStrategy.REPLACE)
-  suspend fun insertAll(entities: List<CompanyListingEntity>): List<Long>
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertAll(entities: List<CompanyListingEntity>): List<Long>
 }

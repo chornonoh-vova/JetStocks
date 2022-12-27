@@ -13,15 +13,15 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
-  @Provides
-  @Singleton
-  fun providesJetStocksDatabase(@ApplicationContext context: Context): JetStocksDatabase =
-    Room.databaseBuilder(
-      context,
-      JetStocksDatabase::class.java,
-      "JetStocks"
-    ).build()
+    @Provides
+    @Singleton
+    fun providesJetStocksDatabase(@ApplicationContext context: Context): JetStocksDatabase =
+        Room.databaseBuilder(
+            context,
+            JetStocksDatabase::class.java,
+            "JetStocks"
+        ).build()
 
-  @Provides
-  fun providesCompanyListingDao(database: JetStocksDatabase) = database.companyListingDao()
+    @Provides
+    fun providesCompanyListingDao(database: JetStocksDatabase) = database.companyListingDao()
 }

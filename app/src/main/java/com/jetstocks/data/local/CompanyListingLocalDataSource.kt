@@ -9,12 +9,12 @@ import kotlinx.coroutines.flow.map
 import javax.inject.Inject
 
 class CompanyListingLocalDataSource @Inject constructor(
-  private val companyListingDao: CompanyListingDao
+    private val companyListingDao: CompanyListingDao
 ) {
-  fun getCompanyListings() = companyListingDao.getCompanyListings().map {
-    it.map(CompanyListingEntity::asExternalModel)
-  }
+    fun getCompanyListings() = companyListingDao.getCompanyListings().map {
+        it.map(CompanyListingEntity::asExternalModel)
+    }
 
-  suspend fun persistCompanyListings(companyListings: List<CompanyListing>) =
-    companyListingDao.insertAll(companyListings.map(CompanyListing::asEntity))
+    suspend fun persistCompanyListings(companyListings: List<CompanyListing>) =
+        companyListingDao.insertAll(companyListings.map(CompanyListing::asEntity))
 }
